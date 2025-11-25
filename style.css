@@ -10,6 +10,16 @@
     border-radius: 8px;
 }
 
+.card-2{
+    border: 2px groove rgb(226, 29, 226);
+    padding: 8px;
+    border-radius: 10px;
+}
+
 .green-background{
     background-color: greenyellow;
+}
+
+.pink-background{
+    background-color: pink;
 }
