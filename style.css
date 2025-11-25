@@ -1,5 +1,15 @@
 .invisible{
     display: none;
     /* in innerText sparisce il terzo (che ha il tag invisible) così come viene visualizzato nella pagina */
-    /* con textContent non succede questo */
+    /* con textContent non succede questo - non esegue il CSS */
+}
+
+.card{
+    border: 1px solid crimson;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.green-background{
+    background-color: greenyellow;
 }
