@@ -26,14 +26,12 @@ const divOneA = document.querySelector('#div1');  //per prendere
 console.log(divOneA);
 
 
-
 //METODO 5: querySelectorAll
 const allPs = document.querySelectorAll('p');
 console.log(allPs);
 
 const allPippo = document.querySelectorAll('pippo');
 console.log(allPippo);
-
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -59,13 +57,10 @@ console.log(divOne.outerHTML);    //renderizza non solo il contenuto ma anche il
 console.log(divOne.children);    //collection dei figli
 
 
-
 //DIFFERENZA TRA innerText e textContent  -  VEDI esempio nel CSS: classe .invisible
-
 //La differenza principale è che innerText restituisce il testo visibile e formattato dall'utente, ignorando il testo nascosto dal CSS, 
 //mentre textContent restituisce il testo raw (grezzo) così come si trova nel markup, incluse le interruzioni di riga e il testo nascosto. 
 //innerText considera gli stili e può essere più lento, specialmente in un ciclo, a causa del costo di calcolo del rendering, mentre textContent è più veloce poiché non deve calcolare lo stile e restituisce il testo non renderizzato.
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -152,6 +147,8 @@ card.classList.toggle('card');  //se una classe è gia presente la toglieo vicev
 //Inolte, tra add e appendChild c'è la differenza che appendChild aggiunge un elemento figlio a un elemento padre, 
 //mentre add aggiunge una classe a un elemento.
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Esercizio in classe
 const fruits = [
     {name: "banana", origin: "Ecuador", weight: 100},
     {name: "mela", origin: "Italia", weight: 200},
@@ -168,7 +165,7 @@ const fruits = [
 //     const fruitHtml = `<div class="card">
 //     <p>nome: ${fruit.name}</p>
 //     <p>origin: ${fruit.origin}</p>
-//     <p>peso: ${fruit.weight} kg</p>
+//     <p>peso: ${fruit.weight} gr</p>
 // </div>`
 
 // container.innerHTML += fruitHtml; //metto tutto dentro il container //è uguale a container.innerHTML = container.innerHTML + fruitHtml
@@ -251,15 +248,14 @@ for (const fruit of fruits) {  //faccio un ciclo for of
     fruitCard.appendChild(weightDiv);
 
     const weightF = document.createElement('p');
-    const weightNode = document.createTextNode('Peso: ' + fruit.weight);
+    const weightNode = document.createTextNode('Peso: ' + fruit.weight + 'gr');
     weightF.appendChild(weightNode);
     weightDiv.appendChild(weightF);
-
-}
-
+    }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//Esercizio per casa - fare un ciclo for of con innerHTML e appendChild:
 const cosmetici = [
     {
         id: 1,
@@ -494,7 +490,7 @@ const cosmetici = [
 //     <p>Marca: ${cosmetic.marca}</p>
 //     <p>Categoria: ${cosmetic.categoria}</p>
 //     <p>Prezzo: ${cosmetic.prezzo}</p>
-//     <p>Ingredienti principali: ${cosmetic.ingredientiPrincipali}</p>
+//     <p>Ingredienti principali: ${cosmetic.ingredientiPrincipali.join(', ')}</p>   //.join(', ') per aggiungere una virgola e lo spazio
 //     <p>Uso consigliato: ${cosmetic.usoConsigliato}</p>
 //     <p>Recensioni: ${cosmetic.recensioni}</p>
 //     <p>In stock: ${cosmetic.inStock}</p>
@@ -511,7 +507,7 @@ const cosmeticContainer = document.getElementById('cosmetic-container');
 for (const cosmetic of cosmetici) {
     
     const cosmeticCard = document.createElement('div');
-    cosmeticCard.classList.add('card-2');
+    cosmeticCard.classList.add('card-2');  //posso metterlo dopo se voglio
     cosmeticCard.classList.add('pink-background');
     cosmeticContainer.appendChild(cosmeticCard);
 
@@ -529,7 +525,7 @@ for (const cosmetic of cosmetici) {
     cosmeticCard.appendChild(nameDiv);
 
     const nameCosm = document.createElement('p');
-    const nameCosmNode = document.createTextNode('Nome: ' + cosmetic.nome);
+    const nameCosmNode = document.createTextNode('Nome: ' + cosmetic.nome.join);
     nameCosm.appendChild(nameCosmNode);
     nameDiv.appendChild(nameCosm);
 
@@ -556,7 +552,7 @@ for (const cosmetic of cosmetici) {
     cosmeticCard.appendChild(priceDiv);
 
     const priceCosm = document.createElement('p');
-    const priceCosmNode = document.createTextNode('Prezzo: ' + cosmetic.prezzo);
+    const priceCosmNode = document.createTextNode('Prezzo: ' + cosmetic.prezzo + ' €');
     priceCosm.appendChild(priceCosmNode);
     priceDiv.appendChild(priceCosm);
 
@@ -565,7 +561,7 @@ for (const cosmetic of cosmetici) {
     cosmeticCard.appendChild(mainIngredientsDiv);
 
     const mainIngredientsCosm = document.createElement('p');
-    const mainIngredientsCosmNode = document.createTextNode('Ingredienti principali: ' + cosmetic.ingredientiPrincipali);
+    const mainIngredientsCosmNode = document.createTextNode('Ingredienti principali: ' + cosmetic.ingredientiPrincipali.join(', '));  //.join(', ') per aggiungere una virgola e lo spazio
     mainIngredientsCosm.appendChild(mainIngredientsCosmNode);
     mainIngredientsDiv.appendChild(mainIngredientsCosm);
 

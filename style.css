@@ -11,9 +11,18 @@
 }
 
 .card-2{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 15px;
+    padding: 15px;
+    padding-right: 5px;
     border: 2px groove rgb(226, 29, 226);
-    padding: 8px;
     border-radius: 10px;
+    box-shadow: inset 0px 0px 4px 1px rgba(226, 29, 226);
+    box-shadow: 0px 0px 3px 0px rgba(226, 29, 226);
+    /* width: 25%;
+    height: auto;  */
 }
 
 .green-background{
@@ -22,4 +31,27 @@
 
 .pink-background{
     background-color: pink;
+}
+
+.switch{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: none;
+    background-color: darkslategray;
+    box-shadow: 3px 3px 5px 3px rgba(0,0,0,0.2);
+    /* https://box-shadow.dev/ - per prendere delle ombre di vari tipi */
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    color: white;
+}
+
+.on{
+
+    background-color: chartreuse;
+    color: black;
+    box-shadow: inset 2px 2px 4px 1px rgba(0,0,0,0.2);
+    /* box-shadow inset aggiunge effetto ombra all'interno. Effetto bottone premuto */
+
 }

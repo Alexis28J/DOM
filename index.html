@@ -12,35 +12,45 @@
 
 <body>
 
-
     <div id="div1" class="pluto">
         <p class="pippo">Primo</p>
         <p class="pippo">Secondo</p>
         <p class="pippo invisible">Terzo</p>
     </div>
 
-    <div id="empty-div">
 
-    </div>
+    <div id="empty-div"></div>
 
 
     <div id="fruit-container">
-        
         <h2>Lista della frutta</h2>
-
     </div>
+
 
     <div id="cosmetic-container">
-
         <h2>Lista di cosmetici</h2>
-        
     </div>
+
+
+    <button onclick="pressedButton()">SCHIACCIAMI FORTE!</button>
+    <!-- funzione pressedButton() si trova in script-2.js -->
+
+     <!-- questa connessione si può fare direttamente dal js -->
+      <!-- vedi addEvenListener in script-2.js -->
+      <button id="press-counter">CONTA PRESSIONI</button>
+      <p id="press-displayer"></p>
+
+      <!-- vedi classlist toggle in script-2.js e switch in style.css -->
+      <button  id="switch-btn" class="switch">
+        <span>OFF</span>
+      </button>
 
 
 </body>
 
 
 <script src="./script.js"></script>
+<script src="./script-2.js"></script>
 
 
 </html>
