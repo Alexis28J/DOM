@@ -20,7 +20,7 @@ const nintendoGames = [
         developer: "Nintendo EPD",
         isMultiplayer: true,
         rating: 97,
-        priceUSD: 59.99,
+        priceUSD: 62.99,
         isExclusive: true
     },
     {
@@ -31,7 +31,7 @@ const nintendoGames = [
         developer: "Nintendo EPD",
         isMultiplayer: true,
         rating: 90,
-        priceUSD: 59.99,
+        priceUSD: 40.99,
         isExclusive: true
     },
     {
@@ -42,7 +42,7 @@ const nintendoGames = [
         developer: "MercurySteam, Nintendo EPD",
         isMultiplayer: false,
         rating: 88,
-        priceUSD: 59.99,
+        priceUSD: 56.99,
         isExclusive: true
     },
     {
@@ -53,7 +53,7 @@ const nintendoGames = [
         developer: "Nintendo EPD",
         isMultiplayer: true,
         rating: 83,
-        priceUSD: 59.99,
+        priceUSD: 50.99,
         isExclusive: true
     },
     {
@@ -64,7 +64,7 @@ const nintendoGames = [
         developer: "Game Freak",
         isMultiplayer: true,
         rating: 72,
-        priceUSD: 59.99,
+        priceUSD: 58.99,
         isExclusive: true
     },
     {
@@ -75,7 +75,7 @@ const nintendoGames = [
         developer: "Bandai Namco Studios, Sora Ltd.",
         isMultiplayer: true,
         rating: 93,
-        priceUSD: 59.99,
+        priceUSD: 49.99,
         isExclusive: true
     },
     {
@@ -86,7 +86,7 @@ const nintendoGames = [
         developer: "Nintendo EAD",
         isMultiplayer: true,
         rating: 92,
-        priceUSD: 59.99,
+        priceUSD: 69.99,
         isExclusive: true
     },
     {
@@ -97,7 +97,7 @@ const nintendoGames = [
         developer: "Intelligent Systems, Koei Tecmo",
         isMultiplayer: false,
         rating: 89,
-        priceUSD: 59.99,
+        priceUSD: 39.99,
         isExclusive: true
     },
     {
@@ -108,7 +108,7 @@ const nintendoGames = [
         developer: "Next Level Games",
         isMultiplayer: true,
         rating: 86,
-        priceUSD: 59.99,
+        priceUSD: 69.99,
         isExclusive: true
     },
     {
@@ -119,7 +119,7 @@ const nintendoGames = [
         developer: "Retro Studios",
         isMultiplayer: true,
         rating: 87,
-        priceUSD: 59.99,
+        priceUSD: 70.99,
         isExclusive: true
     },
     {
@@ -130,7 +130,7 @@ const nintendoGames = [
         developer: "Monolith Soft",
         isMultiplayer: false,
         rating: 89,
-        priceUSD: 59.99,
+        priceUSD: 62.99,
         isExclusive: true
     },
     {
@@ -141,7 +141,7 @@ const nintendoGames = [
         developer: "HAL Laboratory",
         isMultiplayer: true,
         rating: 85,
-        priceUSD: 59.99,
+        priceUSD: 58.99,
         isExclusive: true
     },
     {
@@ -152,7 +152,7 @@ const nintendoGames = [
         developer: "PlatinumGames",
         isMultiplayer: false,
         rating: 87,
-        priceUSD: 59.99,
+        priceUSD: 53.99,
         isExclusive: true
     }
 ]
@@ -205,5 +205,26 @@ orderTitleBtn.addEventListener('click', orderGamesByTitle);
 
 //TASK:
 //COMPLETARE LE SCHEDE DEI GIOCHI RENDENDOLE MOLTO BELLE! (CON TUTTE LE PROPRIETà)
+
 //AGGIUNGERE L'ORDINAMENTO PER PREZZO (DAL PIù ECONOMICO AL PIù CARO)
+
+
+const ascendentPriceOrder = document.getElementById('price-order'); 
+
+function comparePrices(g1, g2){
+    return g1.priceUSD - g2.priceUSD;
+}
+
+function orderGamesByPrice() {
+    
+     nintendoGames.sort(comparePrices);
+     
+     renderGameList(nintendoGames);
+
+};
+
+ascendentPriceOrder.addEventListener('click', orderGamesByPrice);
+
+
+
 //AGGIUNGERE L'ORDINAMENTO PER RATING (DAL RATING MIGLIORE AL PEGGIORE)
