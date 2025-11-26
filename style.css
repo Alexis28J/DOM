@@ -47,6 +47,7 @@
     color: white;
 }
 
+
 .on{
 
     background-color: chartreuse;
@@ -54,4 +55,11 @@
     box-shadow: inset 2px 2px 4px 1px rgba(0,0,0,0.2);
     /* box-shadow inset aggiunge effetto ombra all'interno. Effetto bottone premuto */
 
+}
+
+
+.bad{
+     height: 150px;
+     width: 150px;
+     background-color: red;
 }

@@ -55,3 +55,14 @@ function switchOn() {
 switchButton.addEventListener('click', switchOn);  
 //se clicco il botone si stamperà nella console il testo 'ACCESO'
 
+
+//mouse enter/leave
+const badDiv = document.getElementById('bad-div');
+//se abbiamo delle funzione molto semplici possiamo fare la lambda
+
+badDiv.addEventListener('mouseenter', () => badDiv.innerHTML = 'Che fai??? Mi tocchi???'); //mouseenter scatta quando il mouse "entra" dentro il div
+//con l'evento mouse enter, se passo il mouse per il quadro appare la scritta 'Che fai??? Mi tocchi???', MA NON torna indietro
+
+badDiv.addEventListener('mouseleave', () => badDiv.innerHTML = 'FAI ATTENZIONE!!!');
+//con mouseleave, la scritta può "tornare indietro" (cambiare), quando il mouse esce dall'elemento
+
