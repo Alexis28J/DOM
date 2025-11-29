@@ -10,27 +10,30 @@
     border-radius: 8px;
 }
 
-.card-2{
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    margin: 15px;
-    padding: 15px;
-    padding-right: 5px;
-    border: 2px groove rgb(226, 29, 226);
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 4px 1px rgba(226, 29, 226);
-    box-shadow: 0px 0px 3px 0px rgba(226, 29, 226);
-    /* width: 25%;
-    height: auto;  */
-}
-
 .green-background{
     background-color: greenyellow;
 }
 
+.card-2{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 10px;
+    border: 2px groove rgb(226, 29, 226);
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 4px 1px rgba(226, 29, 226);
+    box-shadow: 0px 0px 3px 0px rgba(226, 29, 226); 
+}
+
 .pink-background{
     background-color: pink;
+}
+
+
+#cosmetic-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .switch{
@@ -62,4 +65,46 @@
      height: 150px;
      width: 150px;
      background-color: red;
+}
+
+
+/* --------------------------------------NINTENDO GAMES------------------------------------------------------------- */
+
+.game-card{
+    border: 3px inset rgb(163, 13, 13);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    height: 450px;
+    
+}
+
+.nintendo-background{
+    background: #E30C0C;
+    background: linear-gradient(90deg, rgba(227, 12, 12, 1) 50%, rgba(253, 29, 29, 1) 68%, rgba(242, 34, 34, 1) 82%, rgba(245, 219, 184, 1) 100%);
+    /* background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/3524ba70148279.5e9e1a288e349.png); */
+    /* 1. Specifica il percorso dell'immagine */
+    background-repeat: no-repeat;
+    /* 2. Assicura che l'immagine non si ripeta  */
+    background-size: cover;
+    /* 3. Fa in modo che l'immagine copra l'intero elemento */
+    background-position: center;
+    /* 4. Centra l'immagine nello sfondo */
+    box-shadow: 10px 10px 30px 3px rgba(238, 56, 56, 0.432);
+}
+
+#game-container{
+    display: flex;
+    flex-direction: wrap;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+}
+
+span{
+    color: mintcream;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

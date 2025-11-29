@@ -479,117 +479,118 @@ const cosmetici = [
     }
 ];
 
-// const cosmeticCont = document.getElementById('cosmetic-container');
+const cosmeticCont = document.getElementById('cosmetic-container');
 
 // //con innerHTML
-// for (const cosmetic of cosmetici) {
+for (const cosmetic of cosmetici) {
 
-//     const cosmeticHtml = `<div class="card-2 pink-background">
-//     <p>ID: ${cosmetic.id}</p>
-//     <p>Nome: ${cosmetic.name}</p>
-//     <p>Marca: ${cosmetic.marca}</p>
-//     <p>Categoria: ${cosmetic.categoria}</p>
-//     <p>Prezzo: ${cosmetic.prezzo}</p>
-//     <p>Ingredienti principali: ${cosmetic.ingredientiPrincipali.join(', ')}</p>   //.join(', ') per aggiungere una virgola e lo spazio
-//     <p>Uso consigliato: ${cosmetic.usoConsigliato}</p>
-//     <p>Recensioni: ${cosmetic.recensioni}</p>
-//     <p>In stock: ${cosmetic.inStock}</p>
-// </div>`;
-    
-// cosmeticCont.innerHTML += cosmeticHtml; //metto tutto dentro cosmeticCont 
-// //è uguale a cosmeticCont.innerHTML = cosmeticCont.innerHTML + cosmeticHtml
-// }
+    const cosmeticHtml = `<div class="card-2 pink-background">
+    <p>ID: ${cosmetic.id}</p>
+    <p>Nome: ${cosmetic.name}</p>
+    <p>Marca: ${cosmetic.marca}</p>
+    <p>Categoria: ${cosmetic.categoria}</p>
+    <p>Prezzo: ${cosmetic.prezzo}</p>
+    <p>Ingredienti principali: ${cosmetic.ingredientiPrincipali.join(', ')}</p>   
+    <p>Uso consigliato: ${cosmetic.usoConsigliato}</p>
+    <p>Recensioni: ${cosmetic.recensioni}</p>
+    <p>In stock: ${cosmetic.inStock}</p>
+</div>`;
+//.join(', ') per aggiungere una virgola e lo spazio
+
+cosmeticCont.innerHTML += cosmeticHtml; //metto tutto dentro cosmeticCont 
+//è uguale a cosmeticCont.innerHTML = cosmeticCont.innerHTML + cosmeticHtml
+}
 
 
 //con appendChild
-const cosmeticContainer = document.getElementById('cosmetic-container');
+// const cosmeticContainer = document.getElementById('cosmetic-container');
 
-for (const cosmetic of cosmetici) {
+// for (const cosmetic of cosmetici) {
     
-    const cosmeticCard = document.createElement('div');
-    cosmeticCard.classList.add('card-2');  //posso metterlo dopo se voglio
-    cosmeticCard.classList.add('pink-background');
-    cosmeticContainer.appendChild(cosmeticCard);
+//     const cosmeticCard = document.createElement('div');
+//     cosmeticCard.classList.add('card-2');  //posso metterlo dopo se voglio
+//     cosmeticCard.classList.add('pink-background');
+//     cosmeticContainer.appendChild(cosmeticCard);
 
-    //id
-    const idDiv = document.createElement('div');
-    cosmeticCard.appendChild(idDiv);
+//     //id
+//     const idDiv = document.createElement('div');
+//     cosmeticCard.appendChild(idDiv);
     
-    const idCosm = document.createElement('p');
-    const idCosmNode = document.createTextNode('ID: ' + cosmetic.id);
-    idCosm.appendChild(idCosmNode);
-    idDiv.appendChild(idCosm);
+//     const idCosm = document.createElement('p');
+//     const idCosmNode = document.createTextNode('ID: ' + cosmetic.id);
+//     idCosm.appendChild(idCosmNode);
+//     idDiv.appendChild(idCosm);
 
-    //nome
-    const nameDiv = document.createElement('div'); 
-    cosmeticCard.appendChild(nameDiv);
+//     //nome
+//     const nameDiv = document.createElement('div'); 
+//     cosmeticCard.appendChild(nameDiv);
 
-    const nameCosm = document.createElement('p');
-    const nameCosmNode = document.createTextNode('Nome: ' + cosmetic.nome.join);
-    nameCosm.appendChild(nameCosmNode);
-    nameDiv.appendChild(nameCosm);
+//     const nameCosm = document.createElement('p');
+//     const nameCosmNode = document.createTextNode('Nome: ' + cosmetic.nome.join);
+//     nameCosm.appendChild(nameCosmNode);
+//     nameDiv.appendChild(nameCosm);
 
-    //marca
-    const brandDiv = document.createElement('div'); 
-    cosmeticCard.appendChild(brandDiv);
+//     //marca
+//     const brandDiv = document.createElement('div'); 
+//     cosmeticCard.appendChild(brandDiv);
 
-    const brandCosm = document.createElement('p');
-    const brandCosmNode = document.createTextNode('Marca: ' + cosmetic.marca);
-    brandCosm.appendChild(brandCosmNode);
-    brandDiv.appendChild(brandCosm);
+//     const brandCosm = document.createElement('p');
+//     const brandCosmNode = document.createTextNode('Marca: ' + cosmetic.marca);
+//     brandCosm.appendChild(brandCosmNode);
+//     brandDiv.appendChild(brandCosm);
 
-    //categoria
-    const categoryDiv = document.createElement('div'); 
-    cosmeticCard.appendChild(categoryDiv);
+//     //categoria
+//     const categoryDiv = document.createElement('div'); 
+//     cosmeticCard.appendChild(categoryDiv);
 
-    const categoryCosm = document.createElement('p');
-    const categoryCosmNode = document.createTextNode('Categoria: ' + cosmetic.categoria);
-    categoryCosm.appendChild(categoryCosmNode);
-    categoryDiv.appendChild(categoryCosm);
+//     const categoryCosm = document.createElement('p');
+//     const categoryCosmNode = document.createTextNode('Categoria: ' + cosmetic.categoria);
+//     categoryCosm.appendChild(categoryCosmNode);
+//     categoryDiv.appendChild(categoryCosm);
 
-    //prezzo
-    const priceDiv = document.createElement('div'); 
-    cosmeticCard.appendChild(priceDiv);
+//     //prezzo
+//     const priceDiv = document.createElement('div'); 
+//     cosmeticCard.appendChild(priceDiv);
 
-    const priceCosm = document.createElement('p');
-    const priceCosmNode = document.createTextNode('Prezzo: ' + cosmetic.prezzo + ' €');
-    priceCosm.appendChild(priceCosmNode);
-    priceDiv.appendChild(priceCosm);
+//     const priceCosm = document.createElement('p');
+//     const priceCosmNode = document.createTextNode('Prezzo: ' + cosmetic.prezzo + ' €');
+//     priceCosm.appendChild(priceCosmNode);
+//     priceDiv.appendChild(priceCosm);
 
-    //ingredientiPrincipali
-    const mainIngredientsDiv = document.createElement('div'); 
-    cosmeticCard.appendChild(mainIngredientsDiv);
+//     //ingredientiPrincipali
+//     const mainIngredientsDiv = document.createElement('div'); 
+//     cosmeticCard.appendChild(mainIngredientsDiv);
 
-    const mainIngredientsCosm = document.createElement('p');
-    const mainIngredientsCosmNode = document.createTextNode('Ingredienti principali: ' + cosmetic.ingredientiPrincipali.join(', '));  //.join(', ') per aggiungere una virgola e lo spazio
-    mainIngredientsCosm.appendChild(mainIngredientsCosmNode);
-    mainIngredientsDiv.appendChild(mainIngredientsCosm);
+//     const mainIngredientsCosm = document.createElement('p');
+//     const mainIngredientsCosmNode = document.createTextNode('Ingredienti principali: ' + cosmetic.ingredientiPrincipali.join(', '));  //.join(', ') per aggiungere una virgola e lo spazio
+//     mainIngredientsCosm.appendChild(mainIngredientsCosmNode);
+//     mainIngredientsDiv.appendChild(mainIngredientsCosm);
 
-    //usoConsigliato
-    const advisedUseDiv = document.createElement('div'); 
-    cosmeticCard.appendChild(advisedUseDiv);
+//     //usoConsigliato
+//     const advisedUseDiv = document.createElement('div'); 
+//     cosmeticCard.appendChild(advisedUseDiv);
 
-    const advisedUseCosm = document.createElement('p');
-    const advisedUseCosmNode = document.createTextNode('Uso consigliato: ' + cosmetic.usoConsigliato);
-    advisedUseCosm.appendChild(advisedUseCosmNode);
-    advisedUseDiv.appendChild(advisedUseCosm);
+//     const advisedUseCosm = document.createElement('p');
+//     const advisedUseCosmNode = document.createTextNode('Uso consigliato: ' + cosmetic.usoConsigliato);
+//     advisedUseCosm.appendChild(advisedUseCosmNode);
+//     advisedUseDiv.appendChild(advisedUseCosm);
 
-    //recensioni
-    const reviewDiv = document.createElement('div'); 
-    cosmeticCard.appendChild(reviewDiv);
+//     //recensioni
+//     const reviewDiv = document.createElement('div'); 
+//     cosmeticCard.appendChild(reviewDiv);
 
-    const reviewCosm = document.createElement('p');
-    const reviewCosmNode = document.createTextNode('Recensioni: ' + cosmetic.recensioni);
-    reviewCosm.appendChild(reviewCosmNode);
-    reviewDiv.appendChild(reviewCosm);
+//     const reviewCosm = document.createElement('p');
+//     const reviewCosmNode = document.createTextNode('Recensioni: ' + cosmetic.recensioni);
+//     reviewCosm.appendChild(reviewCosmNode);
+//     reviewDiv.appendChild(reviewCosm);
 
-    //inStock
-    const inStockDiv = document.createElement('div'); 
-    cosmeticCard.appendChild(inStockDiv);
+//     //inStock
+//     const inStockDiv = document.createElement('div'); 
+//     cosmeticCard.appendChild(inStockDiv);
 
-    const inStockCosm = document.createElement('p');
-    const inStockCosmNode = document.createTextNode('In stock: ' + cosmetic.inStock);
-    inStockCosm.appendChild(inStockCosmNode);
-    inStockDiv.appendChild(inStockCosm);
+//     const inStockCosm = document.createElement('p');
+//     const inStockCosmNode = document.createTextNode('In stock: ' + cosmetic.inStock);
+//     inStockCosm.appendChild(inStockCosmNode);
+//     inStockDiv.appendChild(inStockCosm);
 
-}
+// }

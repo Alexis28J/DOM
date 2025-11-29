@@ -159,24 +159,57 @@ const nintendoGames = [
 
 
 
-function renderGameList(games) {
+function renderGameList(games) {  // funzione per renderizzare la lista dei giochi
 
     const gameContainer = document.getElementById('game-container');
-    gameContainer.innerText = '';
+    gameContainer.innerText = '';  //'' per svuotare il container prima di riempirlo di nuovo
 
     for (const game of nintendoGames) {
 
         const gameCard = document.createElement('div')
+        gameCard.classList.add('game-card');
+        gameCard.classList.add('nintendo-background');
         gameContainer.appendChild(gameCard);
 
+        // title
         const titleSpan = document.createElement('span');
-        titleSpan.appendChild(document.createTextNode('Title: ' + game.title));
+        titleSpan.appendChild(document.createTextNode('TITLE: ' + game.title));
         gameCard.appendChild(titleSpan);
 
+        //platform
+        const platformSpan = document.createElement('span');
+        platformSpan.appendChild(document.createTextNode('PLATFORM: ' + game.platform));
+        gameCard.appendChild(platformSpan);
 
+        //genre
+        const genreSpan = document.createElement('span');
+        genreSpan.appendChild(document.createTextNode('GENRE: ' + game.genre));
+        gameCard.appendChild(genreSpan)
+
+        //releaseYear
+        const releaseYearSpan = document.createElement('span');
+        releaseYearSpan.appendChild(document.createTextNode('RELEASE YEAR: ' + game.releaseYear));
+        gameCard.appendChild(releaseYearSpan);
+
+        //isMultiplayer
+        const isMultiplayerSpan = document.createElement('span');
+        isMultiplayerSpan.appendChild(document.createTextNode('IS MULTIPLAYER?: ' + game.isMultiplayer));
+        gameCard.appendChild(isMultiplayerSpan);
+
+        //rating
+        const ratingSpan = document.createElement('span');
+        ratingSpan.appendChild(document.createTextNode('RATING: ' + game.rating));
+        gameCard.appendChild(ratingSpan);
+
+        //priceUSD
         const priceSpan = document.createElement('span');
-        priceSpan.appendChild(document.createTextNode('Price: $' + game.priceUSD));
+        priceSpan.appendChild(document.createTextNode('PRICE IN USD: $' + game.priceUSD));
         gameCard.appendChild(priceSpan);
+
+        //isExclusive
+        const isExclusiveSpan = document.createElement('span');
+        isExclusiveSpan.appendChild(document.createTextNode('IS EXCLUSIVE?: ' + game.isExclusive));
+    
 
     }
 
@@ -206,8 +239,9 @@ orderTitleBtn.addEventListener('click', orderGamesByTitle);
 //TASK:
 //COMPLETARE LE SCHEDE DEI GIOCHI RENDENDOLE MOLTO BELLE! (CON TUTTE LE PROPRIETà)
 
-//AGGIUNGERE L'ORDINAMENTO PER PREZZO (DAL PIù ECONOMICO AL PIù CARO)
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//AGGIUNGERE L'ORDINAMENTO PER PREZZO (DAL PIù ECONOMICO AL PIù CARO)
 
 const ascendentPriceOrder = document.getElementById('price-order'); 
 
@@ -225,6 +259,20 @@ function orderGamesByPrice() {
 
 ascendentPriceOrder.addEventListener('click', orderGamesByPrice);
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //AGGIUNGERE L'ORDINAMENTO PER RATING (DAL RATING MIGLIORE AL PEGGIORE)
+
+const descendentRatingOrder = document.getElementById('rating-order');
+
+function compareRatings(g1, g2){
+    return g2.rating - g1.rating;
+}
+
+function orderGamesByRating(){
+
+    nintendoGames.sort(compareRatings);
+    renderGameList(nintendoGames);
+}
+
+descendentRatingOrder.addEventListener('click', orderGamesByRating);
