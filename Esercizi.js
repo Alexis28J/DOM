@@ -157,7 +157,7 @@ const nintendoGames = [
     }
 ]
 
-
+// VEDI REPOSITORY DEL PROF. - LE SUE CARD SONO PIù ELABORATE (TRUCCHI UTILI DA IMPARARE)
 
 function renderGameList(games) {  // funzione per renderizzare la lista dei giochi
 
@@ -178,12 +178,12 @@ function renderGameList(games) {  // funzione per renderizzare la lista dei gioc
 
         //platform
         const platformSpan = document.createElement('span');
-        platformSpan.appendChild(document.createTextNode('PLATFORM: ' + game.platform));
+        platformSpan.appendChild(document.createTextNode('PLATFORM: ' + game.platform.join(', ')));  //platform e genre sono delle array, quindi posso usare .join per aggiungere spazio
         gameCard.appendChild(platformSpan);
 
         //genre
         const genreSpan = document.createElement('span');
-        genreSpan.appendChild(document.createTextNode('GENRE: ' + game.genre));
+        genreSpan.appendChild(document.createTextNode('GENRE: ' + game.genre.join(', ')));
         gameCard.appendChild(genreSpan)
 
         //releaseYear
@@ -209,6 +209,7 @@ function renderGameList(games) {  // funzione per renderizzare la lista dei gioc
         //isExclusive
         const isExclusiveSpan = document.createElement('span');
         isExclusiveSpan.appendChild(document.createTextNode('IS EXCLUSIVE?: ' + game.isExclusive));
+        gameCard.appendChild(isExclusiveSpan);
     
 
     }
@@ -243,7 +244,7 @@ orderTitleBtn.addEventListener('click', orderGamesByTitle);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //AGGIUNGERE L'ORDINAMENTO PER PREZZO (DAL PIù ECONOMICO AL PIù CARO)
 
-const ascendentPriceOrder = document.getElementById('price-order'); 
+const PriceOrderBtn = document.getElementById('price-order'); 
 
 function comparePrices(g1, g2){
     return g1.priceUSD - g2.priceUSD;
@@ -257,13 +258,13 @@ function orderGamesByPrice() {
 
 };
 
-ascendentPriceOrder.addEventListener('click', orderGamesByPrice);
+PriceOrderBtn.addEventListener('click', orderGamesByPrice);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //AGGIUNGERE L'ORDINAMENTO PER RATING (DAL RATING MIGLIORE AL PEGGIORE)
 
-const descendentRatingOrder = document.getElementById('rating-order');
+const RatingOrderBtn = document.getElementById('rating-order');
 
 function compareRatings(g1, g2){
     return g2.rating - g1.rating;
@@ -275,4 +276,4 @@ function orderGamesByRating(){
     renderGameList(nintendoGames);
 }
 
-descendentRatingOrder.addEventListener('click', orderGamesByRating);
+RatingOrderBtn.addEventListener('click', orderGamesByRating);

@@ -66,3 +66,21 @@ badDiv.addEventListener('mouseenter', () => badDiv.innerHTML = 'Che fai??? Mi to
 badDiv.addEventListener('mouseleave', () => badDiv.innerHTML = 'FAI ATTENZIONE!!!');
 //con mouseleave, la scritta può "tornare indietro" (cambiare), quando il mouse esce dall'elemento
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//style
+
+const styleDiv = document.getElementById('style-div');
+
+styleDiv.style.backgroundColor = 'crimson';  //usando la proprietà style posso stabilire regole CSS dal file JS
+styleDiv.style.color = 'gold';
+styleDiv.style.fontSize = 'xxx-large';
+
+
+//set attribute
+
+const marioImage = document.getElementById('mario-image');
+marioImage.setAttribute('width', '300');
+marioImage.setAttribute('pippo', 'pluto');    
+//posso dargli alla mia immagine attributi che non ci sono nemmeno sull'HTML
+//ovviamente questo 'attributo' (pippo = 'pluto') è assurdo e il browser non lo sa interpretare
